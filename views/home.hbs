@@ -1,0 +1,20 @@
+<a href="/adduser">add user</a>
+<table>
+  <tbody>
+    {{#each rows}}
+      <tr>
+        <td>{{this.Id}}</td>
+        <td>{{this.Name}}</td>
+        <td>{{this.Password}}</td>
+        <td><a href="/edituser/{{this.Id}}"><button>edit</button></a></td>
+        <td><a href="/deleteuser/{{this.Id}}"><button
+              onclick="return confirm('Are you sure?')"
+            >delete</button></a></td>
+
+        <td></td>
+
+      </tr>
+
+    {{/each}}
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+<h1>edit user</h1>
+{{#if msq}}
+  <div>{{msq}}</div>
+{{/if}}
+{{#each rows}}
+  <form method="post" action="/edituser/{{this.Id}}" autocomplete="false">
+    Name:<input type="text" name="name" value={{this.Name}} /><br />
+    Password:<input
+      type="password"
+      name="password"
+      value={{this.Password}}
+    /><br />
+    <button type="submit">Save changes</button><a href="/">back</a>
+  </form>
+{{/each}}
