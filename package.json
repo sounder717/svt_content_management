@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/netlify-lambda serve src",
-    "build": "./node_modules/.bin/netlify-lambda build src"
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "sounder",
   "license": "ISC",
@@ -15,7 +15,6 @@
     "express": "^4.18.2",
     "express-handlebars": "^6.0.7",
     "mysql": "^2.18.1",
-    "netlify-lambda": "^2.0.15",
-    "serverless-http": "^3.1.1"
+    "nodemon": "^2.0.20"
   }
 }
