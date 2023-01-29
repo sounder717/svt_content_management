@@ -11,4 +11,6 @@ router.post("/edituser/:id", svtcontroller.edit);
 
 router.get("/deleteuser/:id", svtcontroller.delete);
 
+router.get("/svtjson", svtcontroller.svtjson);
+
 module.exports = router;

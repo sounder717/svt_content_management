@@ -114,3 +114,17 @@ exports.delete = (req, res) => {
     });
   });
 };
+
+exports.svtjson = (req, res) => {
+  con.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query("select * from users ", (err, rows) => {
+      connection.release();
+      if (!err) {
+        res.json(rows);
+      } else {
+        console.log("error in list", err);
+      }
+    });
+  });
+};
