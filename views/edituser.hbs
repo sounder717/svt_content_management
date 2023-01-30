@@ -10,20 +10,14 @@
       value={{this.URL}}
       class="form-control"
     /><br />
-    TITLE:<input
-      type="text"
+    TITLE:<textarea
       name="title"
-      value={{this.TITLE}}
       class="form-control"
-    /><br />
-    CONTENT:<input
-      type="text"
+    >value={{this.TITLE}}</textarea><br />
+    CONTENT:<textarea
       name="content"
-      value={{this.CONTENT}}
       class="form-control"
-    /><br />
+    >value={{this.CONTENT}}</textarea><br />
     <button type="submit">Save changes</button><a href="/">back</a>
   </form>
-  <h1>{{this.TITLE}}</h1>
-  <textarea></textarea>
 {{/each}}
