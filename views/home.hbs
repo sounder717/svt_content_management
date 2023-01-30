@@ -1,13 +1,27 @@
-<a href="/adduser">add user</a>
-<table>
+<a href="/adduser">
+  <button class="btn btn-success">Add User</button></a>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>URL</th>
+      <th>TITLE</th>
+      <th>CONTENT</th>
+
+    </tr>
+  </thead>
   <tbody>
     {{#each rows}}
       <tr>
-        <td>{{this.Id}}</td>
-        <td>{{this.Name}}</td>
-        <td>{{this.Password}}</td>
-        <td><a href="/edituser/{{this.Id}}"><button>edit</button></a></td>
-        <td><a href="/deleteuser/{{this.Id}}"><button
+        <td>{{this.ID}}</td>
+        <td>{{this.URL}}</td>
+        <td>{{this.TITLE}}</td>
+        <td>{{this.CONTENT}}</td>
+        <td><a href="/edituser/{{this.ID}}"><button
+              class="btn btn-primary"
+            >edit</button></a></td>
+        <td><a href="/deleteuser/{{this.ID}}"><button
+              class="btn btn-danger"
               onclick="return confirm('Are you sure?')"
             >delete</button></a></td>
 

@@ -27,15 +27,15 @@ exports.adduser = (req, res) => {
 exports.save = (req, res) => {
   con.getConnection((err, connection) => {
     if (err) throw err;
-    const { name, password } = req.body;
+    const { url, title, content } = req.body;
 
     connection.query(
-      "insert into users(Name,Password) values(?,?)",
-      [name, password],
+      "insert into users(URL,TITLE,CONTENT) values(?,?,?)",
+      [url, title, content],
       (err, rows) => {
         connection.release();
         if (!err) {
-          res.render("adduser", { msq: "userdetails added success" });
+          res.render("adduser", { msq: "content added successfully" });
         } else {
           console.log("error in list", err);
         }
@@ -49,7 +49,7 @@ exports.edituser = (req, res) => {
     if (err) throw err;
     let id = req.params.id;
 
-    connection.query("select * from users where id=?", [id], (err, rows) => {
+    connection.query("select * from users where ID=?", [id], (err, rows) => {
       connection.release();
       if (!err) {
         res.render("edituser", { rows });
@@ -63,11 +63,11 @@ exports.edituser = (req, res) => {
 exports.edit = (req, res) => {
   con.getConnection((err, connection) => {
     if (err) throw err;
-    const { name, password } = req.body;
+    const { url, title, content } = req.body;
     let id = req.params.id;
     connection.query(
-      "update users set Name=?,Password=? where Id=?",
-      [name, password, id],
+      "update users set URL=?,TITLE=? CONTENT=? where ID=? ",
+      [url, title, content, id],
       (err, rows) => {
         connection.release();
         if (!err) {
@@ -76,7 +76,7 @@ exports.edit = (req, res) => {
             let id = req.params.id;
 
             connection.query(
-              "select * from users where id=?",
+              "select * from users where ID=?",
               [id],
               (err, rows) => {
                 connection.release();
@@ -104,7 +104,7 @@ exports.delete = (req, res) => {
   con.getConnection((err, connection) => {
     if (err) throw err;
     let id = req.params.id;
-    connection.query("delete from users where id=?", [id], (err, rows) => {
+    connection.query("delete from users where ID=?", [id], (err, rows) => {
       connection.release();
       if (!err) {
         res.redirect("/");

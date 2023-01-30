@@ -4,12 +4,26 @@
 {{/if}}
 {{#each rows}}
   <form method="post" action="/edituser/{{this.Id}}" autocomplete="false">
-    Name:<input type="text" name="name" value={{this.Name}} /><br />
-    Password:<input
-      type="password"
-      name="password"
-      value={{this.Password}}
+    URL:<input
+      type="text"
+      name="url"
+      value={{this.URL}}
+      class="form-control"
+    /><br />
+    TITLE:<input
+      type="text"
+      name="title"
+      value={{this.TITLE}}
+      class="form-control"
+    /><br />
+    CONTENT:<input
+      type="text"
+      name="content"
+      value={{this.CONTENT}}
+      class="form-control"
     /><br />
     <button type="submit">Save changes</button><a href="/">back</a>
   </form>
+  <h1>{{this.TITLE}}</h1>
+  <textarea></textarea>
 {{/each}}
