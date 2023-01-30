@@ -66,7 +66,7 @@ exports.edit = (req, res) => {
     const { url, title, content } = req.body;
     let id = req.params.id;
     connection.query(
-      "update users set URL=?,TITLE=? CONTENT=? where ID=? ",
+      "update users set URL=?,TITLE=?, CONTENT=? where ID=? ",
       [url, title, content, id],
       (err, rows) => {
         connection.release();
