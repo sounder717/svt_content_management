@@ -74,17 +74,15 @@ exports.edit = (req, res) => {
           con.getConnection((err, connection) => {
             if (err) throw err;
             let id = req.params.id;
-
             connection.query(
-              "select * from users where ID=?",
+              "select * from users where id=?",
               [id],
               (err, rows) => {
                 connection.release();
                 if (!err) {
-                  res.render("edituser", { rows });
                   res.render("edituser", {
                     rows,
-                    msq: "userdetails edited success",
+                    msg: "user details edited success",
                   });
                 } else {
                   console.log("error in list", err);

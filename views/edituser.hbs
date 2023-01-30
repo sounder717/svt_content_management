@@ -1,23 +1,35 @@
-<h1>edit user</h1>
-{{#if msq}}
-  <div>{{msq}}</div>
+<h1 style="text-align: center;color:chocolate">Edit content</h1>
+{{#if msg}}
+  <div>{{msg}}</div>
 {{/if}}
 {{#each rows}}
-  <form method="post" action="/edituser/{{this.Id}}" autocomplete="false">
-    URL:<input
+  <form
+    method="post"
+    action="/edituser/{{this.ID}}"
+    autocomplete="false"
+    class="p-5"
+  >
+    <h1>URL:</h1><input
       type="text"
       name="url"
       value={{this.URL}}
       class="form-control"
     /><br />
-    TITLE:<textarea
+    <h1>TITLE:</h1><textarea
       name="title"
       class="form-control"
-    >value={{this.TITLE}}</textarea><br />
-    CONTENT:<textarea
+    >{{this.TITLE}}</textarea><br />
+    <h1>CONTENT:</h1><textarea
       name="content"
       class="form-control"
-    >value={{this.CONTENT}}</textarea><br />
-    <button type="submit">Save changes</button><a href="/">back</a>
+    >{{this.CONTENT}}</textarea><br />
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary me-5">Save changes</button>
+      <button class="btn btn-secondary"><a
+          href="/"
+          style="text-decoration: none;color:#fff"
+        >Back</a></button>
+    </div>
+
   </form>
 {{/each}}

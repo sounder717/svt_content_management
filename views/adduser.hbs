@@ -1,15 +1,24 @@
-<h1>Add user</h1>
+<h1 style="text-align: center;color:chocolate">Add user</h1>
 {{#if msq}}
   <div>{{msq}}</div>
 {{/if}}
-<form method="post" action="/adduser" autocomplete="false">
+<form method="post" action="/adduser" autocomplete="false" class="p-5">
   <div class="mb-3">
     URL:<input type="url" name="url" class="form-control" /><br />
-    TITLE:<input type="text" name="title" class="form-control" /><br />
-    CONTENT:<input type="text" name="content" class="form-control" /><br />
-    <button type="submit" class="btn btn-primary">submit</button><a
-      href="/"
-    >back</a>
+    TITLE:<textarea name="title" class="form-control"></textarea><br />
+    CONTENT:<textarea
+      type="text"
+      name="content"
+      class="form-control"
+    ></textarea><br />
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary me-5">Add user</button>
+      <button class="btn btn-secondary"><a
+          href="/"
+          style="text-decoration: none;color:white"
+        >Back</a></button>
+    </div>
+
   </div>
 
 </form>
